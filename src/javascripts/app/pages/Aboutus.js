@@ -7,6 +7,7 @@
 
 import React from 'react';
 import Attribute from '../components/Attribute';
+import SampleList from '../components/SampleList';
 
 /**
  * render home
@@ -16,7 +17,8 @@ import Attribute from '../components/Attribute';
 export const Aboutus = (props) => {  
   return (
     <div>
-      <Attribute value="pages.aboutus.header" tag="h1" />
+      <Attribute value="pages.about_us.header" tag="h1" />
+      <SampleList />
     </div>
   );
 };
