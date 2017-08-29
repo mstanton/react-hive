@@ -1,0 +1,39 @@
+/*
+ *  Fix - iPad zoom on input text smaller than 16px
+ *
+ */ 
+
+@media (min-width: $screen-sm-min) {
+  form select,
+  form textarea,
+  form input,
+  form input:focus,
+  form input:hover {
+    font-size: 16px !important;
+  }
+}
+
+/*
+ *  Fix - Remove arrow controls on number fields
+ *
+ */
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/*
+ *  Fix - Some instances bootstrap modal window can get stuck and not scroll internally on input focus
+ *
+ */
+
+.modal {
+	overflow-y: auto !important;
+	-webkit-overflow-scrolling: auto !important;
+} 

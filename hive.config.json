@@ -1,0 +1,141 @@
+{
+  "options": {
+    "dev": {
+      "rootDest": "./project",
+      "settings": ["autoprefixer", "compile", "concat", "sourcemaps", "browsersync"]
+    },
+    "int": {
+      "rootDest": "./package",
+      "settings": []
+    },
+    "prod": {
+      "rootDest": "./project",
+      "settings": ["autoprefixer", "compile", "concat", "htmlmin", "imagemin", "cssnano", "uglify"]
+    }  
+  },
+
+  "root": {
+    "src": ["./src", "./node_modules"]
+  },
+
+  "tasks": {
+    "browserSync": {
+      "https": false,
+      "server": {
+        "baseDir": "project"
+      },
+      "routes": {
+        "src": "routes",        
+        "extensions": ["js"]
+      }     
+    },
+
+    "static": {
+      "src": "static",
+      "dest": "./"
+    },
+
+    "javascript": {
+      "src": {
+        "main": {
+          "entry": ["javascripts/main"],
+          "format": "iife",
+          "moduleName": "app",
+          "legacy": {
+            "./node_modules/html5shiv/dist/html5shiv.js": "html5shiv"
+          }
+        }
+      },
+      "dest": "javascripts",
+      "watch": [
+        "javascripts",
+        "components"
+      ],
+      "manifest": "manifest.json",
+      "extensions": ["js", "jsx", "json"]
+    },
+
+    "templates": {
+      "output": "precompiledTemplates.js",
+      "src": "templates",
+      "dest": "javascripts",
+      "watch" : "templates",
+      "extensions": ["njx"]
+    },    
+
+    "css": {
+      "src": {
+        "vendor": [
+          "bootstrap-sass/assets/stylesheets/bootstrap/",
+          "font-awesome/scss/",
+          "slick-carousel/slick/"
+        ],        
+        "main": "stylesheets",
+        "components": "components"
+      },
+      "dest": "stylesheets",
+      "watch": [
+        "stylesheets",
+        "components"
+      ],
+      "autoprefixer": {
+        "browsers": ["last 3 version"]
+      },
+      "sass": {
+        "indentedSyntax": false
+      },
+      "manifest": "manifest.json",
+      "extensions": ["sass", "scss", "css"]
+    },
+
+    "html": {
+      "src": [
+        "html",
+        "components"
+      ],
+      "dest": "./",
+      "dataFile": "data/global.json",
+      "htmlmin": {
+        "collapseWhitespace": true
+      },
+      "extensions": ["html", "json"],
+      "excludeFolders": ["components", "layouts", "partials", "macros", "data"]
+    },
+
+    "images": {
+      "src": [
+        "images",
+        "slick-carousel/slick/**"
+      ],
+      "dest": "images",
+      "watch" : "images/**",
+      "extensions": ["jpg", "png", "gif"]
+    },
+
+    "fonts": {
+      "src": [
+        "fonts",
+        "bootstrap-sass/assets/fonts/bootstrap",
+        "font-awesome/fonts",
+        "slick-carousel/slick/fonts"
+      ],
+      "dest": "fonts",
+      "watch": "fonts",
+      "extensions": ["woff2", "woff", "eot", "ttf", "svg"]
+    },
+
+    "iconFont": {
+      "src": "icons",
+      "dest": "fonts",
+      "sassDest": "partials",
+      "extensions": ["woff2", "woff", "eot", "ttf", "svg"]
+    },    
+
+    "svgSprite": {
+      "src": "icons",
+      "dest": "images",
+      "extensions": ["svg"]
+    }
+
+  }
+}

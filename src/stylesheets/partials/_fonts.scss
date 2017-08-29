@@ -1,0 +1,16 @@
+//
+//  Font Icons 
+//  Uncomment the font icon packages to add to your project
+//
+
+// @import "glyphicons";
+// @import "font-awesome";
+@import "_icons"; 
+
+//
+//  Web Fonts
+//  Make use the 'font-face' mixin when adding new fonts
+//
+
+@include font-face(OpenSans, "../fonts/OpenSans-Regular-webfont");
+@include font-face(OpenSans, "../fonts/OpenSans-Bold-webfont", bold);

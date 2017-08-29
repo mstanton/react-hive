@@ -1,0 +1,52 @@
+{
+  "config": {
+    "attributes": {
+      
+      "pages": {
+        "home": {
+          "header": {
+            "enus": "Home"
+          }
+        },
+        "about_us": {
+          "header": {
+            "enus": "About Us"
+          }
+        }
+      },
+
+      "components": {
+        "header": {
+          "welcome": {
+            "enus": "Welcome to the Hive React Boilerplate"
+          }
+        },
+        "footer": {
+          "twitter": {
+            "enus": "Twitter"
+          },
+          "facebook": {
+            "enus": "Facebook"
+          },
+          "instagram": {
+            "enus": "Instagram"
+          }
+        },
+        "loader": {
+          "loading": {
+            "enus": "loading..."
+          }
+        },
+        "sample_list": {
+          "home": {
+            "enus": "Home"
+          },
+          "about_us": {
+            "enus": "About Us"
+          }
+        }        
+      }
+    },
+    "locale": "enus"
+  }
+}

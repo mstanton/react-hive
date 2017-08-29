@@ -1,0 +1,77 @@
+/*
+ *  This is a demo stylesheet that should be removed when you begin
+ *  active development of your project.
+ *
+ */
+
+body {
+  @include font-smoothing;
+  font-family: "OpenSans", "sans-serif";
+}
+
+.logo {
+  text-align: center;
+}
+
+header {
+  margin-top: 25px;
+  padding-bottom: 25px;
+}
+
+footer {
+  border-top: 1px solid #efefef;
+  text-align: center;
+  margin-top: 25px;
+  padding-top: 25px;
+}
+
+$icon-font-path: '../fonts/';
+
+/*
+ *  Font Icons example
+ *
+ */
+
+.social-icons a,
+.social-icons a:hover {
+  text-decoration: none;
+}
+
+.icon {
+  font-size: 32px;
+  margin: 4px;
+  &.icon-instagram {
+    color: $dark-grey;
+  }
+  &.icon-facebook {
+    color: $facebookBlue;
+  }
+  &.icon-twitter {
+    color: $twitterBlue;
+  }
+}
+
+.icon .screenreader {
+  display: none;
+}
+
+/*
+ *  SVG Sprite example
+ *
+ */
+
+.sprite {
+  display: inline-block;
+  fill: currentColor;
+  margin: 8px;
+  width: 32px;
+  &.sprite-instagram {
+    fill: $dark-grey;
+  }
+  &.sprite-facebook {
+    fill: $facebookBlue;
+  }
+  &.sprite-twitter {
+    fill: $twitterBlue;
+  }
+}

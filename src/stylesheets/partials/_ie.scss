@@ -1,0 +1,9 @@
+/*
+ *  remove blue background on ie10/ie11 when selected
+ *
+ */ 
+
+select::-ms-value {
+  background: none;
+  color:inherit;
+}

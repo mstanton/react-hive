@@ -1,0 +1,10 @@
+.DS_Store
+.sass-cache
+.publish
+project
+Desktop.ini
+node_modules
+**/partials/_icons.sass
+npm-debug.log
+.vscode
+**/javascripts/_scratch
