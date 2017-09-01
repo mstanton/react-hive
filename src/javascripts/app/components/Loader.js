@@ -41,7 +41,9 @@ class Loader extends React.Component {
    *
    */
 
-  render() {    
+  render() {  
+    console.log( this.props );
+    
     return (    
       <div>Loading...</div>
     )

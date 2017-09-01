@@ -19,6 +19,7 @@ const SimpleList = (props) => {
     <ul>
       <li><Link to="/"><Attribute value="components.sample_list.home" /></Link></li>
       <li><Link to="/aboutus"><Attribute value="components.sample_list.about_us" /></Link></li>
+      <li><Link to="/clock"><Attribute value="components.sample_list.clock" /></Link></li>
     </ul>
   );
 }

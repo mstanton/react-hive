@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 import { Switch } from 'react-router-dom';
 
 import Page from './Page';
-import { Home, Aboutus } from '../pages';
+import { Home, Aboutus, Clock } from '../pages';
 import { DefaultLayout } from '../layouts';
 
 /**
@@ -52,6 +52,7 @@ class Main extends React.Component {
       <div>
         <Page content={ Home } layout={ DefaultLayout } { ...this.props } path='/' />
         <Page content={ Aboutus } layout={ DefaultLayout } { ...this.props } path='/aboutus' />
+        <Page content={ Clock } layout={ DefaultLayout } { ...this.props } path='/clock' />
       </div>
     )
   }
