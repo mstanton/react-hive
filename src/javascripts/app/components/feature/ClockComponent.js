@@ -1,21 +1,17 @@
 import React from 'react';
 
+
 export default class ClockComponent extends React.Component {
     constructor( props ) {
-        super( props )
+        super( props );
 
-        this.state = {
-            timeString: null,
-            hourDegrees: null, 
-            minDegrees: null, 
-            totalDegrees: null
-        }
-
-        this.calculateDegrees = this.calculateDegrees.bind( this );
+        //this.calculateDegrees = this.calculateDegrees.bind( this );
         this.handleInput = this.handleInput.bind( this );
+
+        this.updateClockTime = this.props.actions.updateClockTime;
     }
 
-    calculateDegrees( timeString ) { 
+    calculateDegrees = ( timeString ) => { 
         const hours = parseFloat( timeString.slice( 0, 2 ), 10 ) % 12;
         const mins = parseFloat( timeString.slice( 3, 5 ), 10 );
 
@@ -24,80 +20,82 @@ export default class ClockComponent extends React.Component {
         const minDegrees = 6.0 * mins;
         const totalDegrees =  minDegrees > hourDegrees ? minDegrees - hourDegrees : hourDegrees - minDegrees;
 
-        this.setState({
+        const clock = {
             timeString: timeString,
-            hourDegrees: hourDegrees ? hourDegrees : 0, 
-            minDegrees: minDegrees ? minDegrees : 0, 
-            totalDegrees: totalDegrees ? totalDegrees : 0,
-        });
+            hourDegrees: hourDegrees,
+            minDegrees: minDegrees,
+            totalDegrees: totalDegrees
+        };
+
+        return clock
     };
 
-    handleInput ( event ) {
-        let timeString = event.target.value;
-        this.calculateDegrees( timeString );
+    handleInput( event ) {
+        let timeString = event.target.value; 
+        let calculatedValues = this.calculateDegrees( timeString );
+
+        // 
+        this.updateClockTime( calculatedValues  );
     }
 
     render() {
+        const { timeString, hourDegrees, minDegrees, totalDegrees } = this.props.data.clock;
         return (
             <div>
-                <div className="container app-container">
+                <br/>
+                <div className="container app-container">  
                     <div className="row">
-                        <div className="col-xs-12 app-header">
-                            <h1>code-example: clock angle problem</h1> 
-                        </div>
-                    </div>    
-                    <div className="row">  
                         <div className="col-xs-6">
                             <table className="table table-bordered table-condensed">
                                 <thead>
                                     <tr>
-                                        <th>units: deg.&deg;</th>
-                                        <th style={ { textAlign: 'center' } }>Angle</th>
-                                    </tr>
+                                        <th style={{ paddingLeft: '20px'}}>
+                                            <h4><strong>Measure Clock Position</strong></h4>
+                                        </th>
+                                        <th style={ { textAlign: 'center' } }>
+                                            <h4><strong>Unit: deg.&deg;</strong></h4>
+                                        </th>
+                                    </tr> 
                                 </thead>      
                                 <tbody>
                                     <tr>
-                                        <td>hour hand</td>
+                                        <td style={{ paddingLeft: '20px'}}><h4>Hour Hand</h4></td>
                                         <td style={ { textAlign: 'center' } }>
-                                            <span>{ this.state.hourDegrees ? this.state.hourDegrees : 0 }&deg;</span>
+                                            <h4>{ hourDegrees || 0 }&deg;</h4>
                                         </td>                                        
                                     </tr>
                                     <tr>
-                                        <td>minute hand</td>
+                                        <td style={{ paddingLeft: '20px'}}><h4>Minute Hand</h4></td>
                                         <td style={ { textAlign: 'center' } }>
-                                            <span>{ this.state.minDegrees ? this.state.minDegrees : 0 }&deg;</span>
+                                            <h4>{ minDegrees || 0 }&deg;</h4>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>total between hands</td>
+                                        <td style={{ paddingLeft: '20px'}}><h4>Total Degrees Between Hands</h4></td>
                                         <td style={ { textAlign: 'center' } }>
-                                            <span>{ this.state.totalDegrees ? this.state.totalDegrees : 0 }&deg;</span>
+                                            <h4>{ totalDegrees || 0 }&deg;</h4>
                                         </td>
                                     </tr>
                                 </tbody>    
                             </table>   
-                        </div>  
+                        </div>
                         <div className="col-xs-4">
                             <form className="form-inline form-time">
-                                <label className="form-label">Time:</label>  
-                                <div className="form-group">  
+                                <label className="form-label">Enter Time: &nbsp;&nbsp;  
                                         { /* time input type is poorly supported... YOLO */ }
                                         <input id="time"
                                             name="time" 
-                                            type="time" 
+                                            type="time"
                                             className="form-control time-input"
                                             onChange={ this.handleInput }
                                         /> 
-                                </div>
-
+                                </label>
                             </form>
-                        </div>
+                        </div>    
                     </div>
                     <div className="row">
                         <div className="col-xs-12 app-footer">
-                            <br/><br/><br/>
-                                <p>-ref: <a href="https://en.wikipedia.org/wiki/Clock_angle_problem">https://en.wikipedia.org/wiki/Clock_angle_problem</a></p>
-                            
+                            <p>-ref: <a href="https://en.wikipedia.org/wiki/Clock_angle_problem">https://en.wikipedia.org/wiki/Clock_angle_problem</a></p>
                         </div>
                    </div>  
                 </div>        
@@ -105,5 +103,6 @@ export default class ClockComponent extends React.Component {
         );
     }
 }
+
 
 

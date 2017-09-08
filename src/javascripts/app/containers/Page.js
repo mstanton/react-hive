@@ -27,7 +27,6 @@ class Page extends React.Component {
 
   render() {
     const { content: Content, layout: Layout, path, ...props } = this.props;
-    
     return (props.data.config) ? (
       <Route exact path={ path } render={ route => (
         <Layout>

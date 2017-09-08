@@ -5,7 +5,7 @@
  *
  */
 
-// import html5shiv from 'html5shiv'; quirky... https://github.com/aFarkas/html5shiv/issues/178 ( OPEN ISSUE atm )
+import html5shiv from 'html5shiv'; //quirky... https://github.com/aFarkas/html5shiv/issues/178 ( OPEN ISSUE atm )
 import App from './app/index';
 
 /**

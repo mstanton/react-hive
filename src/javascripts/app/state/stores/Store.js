@@ -19,8 +19,7 @@ export const history = createHistory();
 
 // set the store initial state object
 const initialState = {
-  config: null,
-  isFetching: false
+  config: null
 };
 
 // instantiate the redux-obseravable middleware with injected dependencies (ajax)
