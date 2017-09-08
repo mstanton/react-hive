@@ -17,10 +17,16 @@ const initialState = [];
 
 const actionHandlers = {  
   [FETCH_START]: (state, action) => {
-    return !state;  
+    return {
+      ...state,
+      isFetching: true
+    }  
   }, 
   [FETCH_END]: (state, action) => {
-    return !state;
+    return {
+      ...state,
+      isFetching: false
+    }
   }
 };
 

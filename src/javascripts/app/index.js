@@ -9,7 +9,7 @@ import React from 'react';
 import { render } from 'react-dom';
 
 import store, { history } from './state/stores/store';
-import { Provider } from 'react-redux';
+import { Provider } from 'react-redux'; // todo: makes use of { connect }
 import { ConnectedRouter as Router } from 'react-router-redux';
 import App from './containers/App';
 

@@ -12,6 +12,11 @@
           "header": {
             "enus": "About Us"
           }
+        },
+        "clock": {
+          "header": {
+            "enus": "Clock Problem"
+          }
         }
       },
 
@@ -43,6 +48,9 @@
           },
           "about_us": {
             "enus": "About Us"
+          },
+          "clock": {
+            "enus": "Clock"
           }
         }        
       }

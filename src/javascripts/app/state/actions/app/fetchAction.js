@@ -16,7 +16,7 @@ export const fetchStart = (action) => {
   return { 
     type: FETCH_START, 
     payload: action.payload, 
-    meta: action.meta 
+    meta: action.meta
   }
 };
 

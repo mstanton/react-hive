@@ -21,7 +21,8 @@ const mapStateToProps = (state) => {
     config: state.config,
     isFetching: state.isFetching,
     location: state.router.location,
-    view: state.responsiveView
+    view: state.responsiveView,
+    clock: state.clock
   }
 };
 
